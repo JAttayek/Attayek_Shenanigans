@@ -1,0 +1,15 @@
+# Fizz-Buzz Problem
+# For every multiple of 3 output "Fizz"
+# For every multiple of 5 output "Buzz"
+# For every common multiple of 3 and 5 output "FizzBuzz"
+
+full_range = list(range(0,101))
+for num in full_range:
+    if num % 15 == 0:
+        print(f"{num} FizzBuzz")
+    elif num % 3 == 0:
+        print(f"{num} Fizz")
+    elif num % 5 == 0:
+        print(f"{num} Buzz")
+    else:
+        print(num)

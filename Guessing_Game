@@ -1,0 +1,22 @@
+import random
+
+print("Welcome to the ultimate Attayek guessing game!\n")
+print("Guess the number I'm thinking of between 1 and 10\n")
+print("Your Guess: ")
+n = int(input())
+x = random.randint(1,10)
+guesses = 1
+if x == n:
+    print("Congratulations you win!!!")
+while x != n :
+    if x < n:
+        print("Lower")
+    elif x > n:
+        print("Higher")
+    print("")
+    print("Next guess: ")
+    guesses += 1
+    n = int(input())
+    if x == n:
+        print("Congratulations you guessed correctly!!!")
+        print(f"It took you {guesses} guesses")
