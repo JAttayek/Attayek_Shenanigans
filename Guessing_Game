@@ -1,22 +1,38 @@
+# adding notes is helpful and makes the code more readable
 import random
 
+# print welcome message
 print("Welcome to the ultimate Attayek guessing game!\n")
 print("Guess the number I'm thinking of between 1 and 10\n")
 print("Your Guess: ")
+
+# define variables n = user input, x = random number between 1 and 10, guesses = number of guesses
 n = int(input())
 x = random.randint(1,10)
 guesses = 1
+
+# if the user guesses correctly on the first try, print congratulations
 if x == n:
     print("Congratulations you win!!!")
+
+    # using a loop, if the user guesses incorrectly, print higher or lower and ask for another guess
 while x != n :
     if x < n:
         print("Lower")
     elif x > n:
         print("Higher")
+
+    # allow user to guess again
     print("")
     print("Next guess: ")
+
+    # increment the number of guesses
     guesses += 1
+
+    # get the user's next guess
     n = int(input())
+
+    # if the user guesses correctly, print congratulations and the number of guesses
     if x == n:
         print("Congratulations you guessed correctly!!!")
         print(f"It took you {guesses} guesses")
