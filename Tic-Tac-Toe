@@ -81,6 +81,14 @@ def check_winner(game_board):
     return False
 
 
+#Check for a draw
+def check_draw(game_board):
+    if "_" not in game_board.replace("\n","|").split("|"):
+        return True
+    else:
+        pass
+
+
 from IPython.display import clear_output
 
 #Iterable to continue game
@@ -109,8 +117,13 @@ while in_progress:
     #Show new board
     clear_output()
     game_setup()
+
+    #Check for a draw
+    if check_draw(game_board):
+        print("\nDRAW!!! Try again.")
+        break
     if not in_progress:
-        print("CONGRATS PLAYER 1 IS THE WINNER!!!")
+        print("\nCONGRATS PLAYER 1 IS THE WINNER!!!")
         continue
 
     #Ask for player2 move
@@ -123,6 +136,8 @@ while in_progress:
     #Show new board
     clear_output()
     game_setup()
+
     if not in_progress:
         print("\nCONGRATS PLAYER 2 IS THE WINNER!!!")
         continue
+
